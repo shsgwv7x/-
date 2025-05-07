@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة محمية</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
+    input[type="password"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4a90e2;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+      margin-top: 30px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>أدخل كلمة السر لعرض الصورة</h2>
+    <input type="password" id="password" placeholder="كلمة السر">
+    <br>
+    <button onclick="checkPassword()">دخول</button>
+    <div class="hidden" id="imageContainer">
+      <h3>تم التحقق! هذه هي الصورة:</h3>
+      <img src="https://via.placeholder.com/400x300.png?text=Your+Image" alt="صورة مؤقتة">
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('password').value;
+      if (pass === 'AH41596Y') {
+        document.getElementById('imageContainer').classList.remove('hidden');
+      } else {
+        alert('كلمة السر خاطئة');
+      }
+    }
+  </script>
+</body>
+</html>
